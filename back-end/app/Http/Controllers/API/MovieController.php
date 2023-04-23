@@ -30,7 +30,11 @@ class MovieController extends Controller
     }
     public function show($id)
     {
-        $JSON_movie = Http::get("www.omdbapi.com/");
+        $api_key = "?apikey=2e0f3cfc";
+        $movie_id = $id;
+        $url = "www.omdbapi.com/" . $api_key . "&i=" . $movie_id;
+
+        $JSON_movie = Http::get($url);
         $movie = json_decode($JSON_movie, true);
         if (!array_key_exists("Error", $movie)) {
             return response()->json([

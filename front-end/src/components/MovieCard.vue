@@ -1,27 +1,22 @@
 <script setup>
-
+import { store } from "../stores/script.js"
 const props = defineProps({
     movie: Object,
 })
 </script>
 <template>
-    <div class="col py-3 sm:max-w-xl sm:mx-auto">
-        <div class="bg-white shadow-lg border-gray-100 max-h-80	 border sm:rounded-3xl p-8 flex space-x-8">
-            <div class="h-48 overflow-visible w-1/2">
-                <img class="rounded-3xl shadow-lg" :src="movie.Poster">
+    <div class="col mb-4">
+        <div class="card h-100 text-dark border-0">
+            <div class="card-head bg-light rounded-top text-center">
+                <h3> {{ store.refactorTitle(movie.Title) }}</h3>
             </div>
-            <div class="flex flex-col w-1/2 space-y-4">
-                <div class="flex justify-between items-start">
-                    <h2 class="text-3xl font-bold"> {{ movie.Title }}</h2>
-                </div>
-                <div>
-                    <div class="text-sm text-gray-400">{{ movie.Type }}</div>
-                    <div class="text-lg text-gray-800"> {{ movie.Year }}</div>
-                </div>
-
-                <div class="flex text-2xl font-bold text-a">Id: {{ movie.imdbID }}</div>
-            </div>
-
+            <img class="card_image" :src="movie.Poster" :alt="movie.Title">
         </div>
     </div>
 </template>
+<style scoped>
+img {
+    height: 100%;
+    object-fit: cover;
+}
+</style>

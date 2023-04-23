@@ -4,20 +4,30 @@ import { store as store } from "../stores/script.js";
 
 
 <template>
-    <div class="search_bar gap-2 pt-2" v-if="this.$route.name === 'Home'">
-        <label for="movieByTitle" class="block">Cerca film dal titolo</label>
-        <input id="movieByTitle" class="form_control p-1" @keyup.enter="store.callApi(store.URL_MOVIE)" type="text"
-            placeholder="Cerca" v-model="store.moviesQuery">
-        <button class="bg-indigo-500 hover:bg-indigo-500 text-white font-bold p-1 rounded mx-1"
-            @click="store.callApi(store.URL_MOVIE)">Cerca</button>
-    </div>
-    <div class="search_bar gap-2 pt-2">
-        <label for="movieById" class="block">Cerca film dall'id</label>
-        <input id="movieById" class="form_control p-1" @keyup.enter="store.callApi(store.URL_MOVIE)" type="text"
-            placeholder="Cerca" v-model="store.movieToSearchId">
-        <button class="bg-indigo-500 hover:bg-indigo-500 text-white font-bold p-1 rounded mx-1"
-            @click="store.callApi(store.URL_MOVIE)">Cerca</button>
-    </div>
+    <section class="input_wrapper">
+        <div class="mb-3 ">
+            <label class="d-block fs-5 fs-4" for="movieByTitle">Cerca film dal titolo</label>
+            <div class="wraper d-flex gap-1">
+                <input id="movieByTitle" class="form-control p-1" @keyup.enter="store.callApi(store.URL_MOVIE, false)"
+                    type="text" placeholder="Cerca" v-model="store.moviesQuery">
+                <button class="btn btn-dark text-white p-1" @click="store.callApi(store.URL_MOVIE, false)">Cerca</button>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="d-block fs-5 fs-4" for="movieById">Cerca film dall'id</label>
+            <div class="wrapper d-flex gap-1">
+                <input id="movieById" class="form-control p-1" @keyup.enter="store.callApi(store.URL_MOVIE, true)"
+                    type="text" placeholder="Cerca" v-model="store.movieToSearchId">
+                <button class="btn btn-dark text-white p-1" @click="store.callApi(store.URL_MOVIE, true)">Cerca</button>
+            </div>
+        </div>
+    </section>
 </template>
 
-<style scoped></style>
+<style scoped>
+.input_wrapper {
+    max-width: 350px;
+    padding-top: 56px;
+    margin: auto;
+}
+</style>
