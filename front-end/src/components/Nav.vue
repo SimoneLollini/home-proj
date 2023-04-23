@@ -1,10 +1,11 @@
 <script setup>
 import { useAuthStore } from "../stores/auth";
+import SearchBar from "./SearchBar.vue";
 
 const authStore = useAuthStore();
 </script>
 <template>
-  <nav class="bg-slate-900 text-white px-2 py-2.5 sm:px-4">
+  <nav class="bg-indigo-500 text-white px-2 py-2.5 sm:px-4">
     <div class="container mx-auto flex flex-wrap items-center justify-between" bis_skin_checked="1">
       <button data-collapse-toggle="navbar-default" type="button" class="ml-3 inline-flex items-center p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden
         " aria-controls="navbar-default" aria-expanded="false">
@@ -25,24 +26,24 @@ const authStore = useAuthStore();
             md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium
           ">
           <li>
-            <router-link :to="{ name: 'Home' }" class="block rounded py-2 pr-4 pl-3 text-white"
+            <router-link :to="{ name: 'Home' }" class="block hover:bg-indigo-700 rounded py-2 pr-4 pl-3 text-white"
               aria-current="page">Home</router-link>
           </li>
           <template v-if="!authStore.user">
             <li>
               <router-link :to="{ name: 'Login' }"
-                class="block rounded py-2 pr-4 pl-3 text-gray-50 hover:bg-gray-700">Login</router-link>
+                class="block rounded py-2 pr-4 pl-3 text-gray-50 hover:bg-indigo-700">Login</router-link>
             </li>
             <li>
               <router-link :to="{ name: 'Register' }"
-                class=" block rounded py-2 pr-4 pl-3 text-gray-50 hover:bg-gray-700 md:border-0">
-                Register
+                class=" block rounded py-2 pr-4 pl-3 text-gray-50 hover:bg-indigo-700 md:border-0">
+                Registrati
               </router-link>
             </li>
           </template>
           <template v-else>
             <button @click="authStore.handleLogout"
-              class=" block rounded py-2 pr-4 pl-3 text-gray-50 hover:bg-gray-700 md:border-0">
+              class=" block rounded py-2 pr-4 pl-3 text-gray-50 hover:bg-indigo-700 md:border-0">
               Logout
             </button>
           </template>
@@ -51,3 +52,5 @@ const authStore = useAuthStore();
     </div>
   </nav>
 </template>
+
+<style scoped></style>

@@ -22,7 +22,10 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 
 
 
-Route::resource('movies', MovieController::class);
+// Route::resource('movies', MovieController::class);
+Route::get('/movies/title/{movies:title}', [MovieController::class, 'index']);
+Route::get('/movies/id/{movie:id}', [MovieController::class, 'show']);
+
 // Route::middleware('auth:sanctum')->group(function () {
    
 // });
