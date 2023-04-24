@@ -28,7 +28,7 @@ const authStore = useAuthStore();
           </template>
           <template v-else>
             <li class="nav-item d-flex align-items-center">
-              <button @click="authStore.handleLogout" class="btn btn_light"> Logout</button>
+              <button @click="authStore.handleLogout" class="btn btn-dark">Logout</button>
             </li>
           </template>
         </ul>
@@ -39,7 +39,7 @@ const authStore = useAuthStore();
 </template>
 
 <style scoped>
-.btn_light {
+.nav-item>.btn-dark {
   color: rgba(255, 255, 255, 0.55);
 }
 </style>
