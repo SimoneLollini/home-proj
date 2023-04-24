@@ -16,10 +16,13 @@ export const store = reactive({
                     this.movies = response.data.results
                     this.movie = null
                 } else {
-                    this.error = true
+                    this.error = response.data.results
+                    this.movie = null
+                    this.movies = null
                 }
             })
             .catch(error => {
+                this.movie = null
                 this.movies = null
                 this.error = true
             })
@@ -32,12 +35,13 @@ export const store = reactive({
                     this.movie = response.data.results
                     this.movies = null
                 } else {
-                    this.error = true
+                    this.error = response.data.results
                 }
             })
             .catch(error => {
+                this.movie = null
                 this.movies = null
-                this.error = true
+                this.error = true;
             })
     },
     /**
@@ -48,6 +52,7 @@ export const store = reactive({
     * 
     */
     callApi(URL, isId) {
+        this.error = null;
         if (!isId) {
             this.callByTitle(URL += "/title/" + this.moviesQuery.toLocaleLowerCase())
         } else if (isId) {

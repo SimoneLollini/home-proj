@@ -24,7 +24,6 @@ onMounted(async () => {
         </div>
       </div>
     </div>
-
     <div v-else class="call_to_reg text-center">
       <h2 class="text-2xl pt-3 pb-2">Prima di continuare:</h2>
       <router-link :to="{ name: 'Register' }" class="btn btn-dark">
