@@ -25,8 +25,8 @@ onMounted(async () => {
       </div>
     </div>
 
-    <div v-else class="text-center">
-      <div class="text-2xl pb-3">Prima di continuare:</div>
+    <div v-else class="call_to_reg text-center">
+      <h2 class="text-2xl pt-3 pb-2">Prima di continuare:</h2>
       <router-link :to="{ name: 'Register' }" class="btn btn-dark">
         Registrati
       </router-link>
@@ -49,5 +49,9 @@ nav {
 
 ::-webkit-scrollbar {
   background: transparent;
+}
+
+.call_to_reg {
+  padding-top: 56px;
 }
 </style>
