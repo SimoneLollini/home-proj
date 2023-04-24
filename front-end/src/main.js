@@ -1,6 +1,9 @@
 import { createApp, markRaw } from "vue";
 import { createPinia } from "pinia";
 import router from "./router";
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap";
 
 import "./axios";
 import "./style.css";
