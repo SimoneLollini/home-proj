@@ -9,12 +9,14 @@ import MovieCard from "./MovieCard.vue"
 const authStore = useAuthStore();
 
 onMounted(async () => {
+  store.movie = "";
+  store.movies = "";
   await authStore.getUser();
 });
 </script>
 <template>
   <Nav />
-  <section class="text-white">
+  <section class="text-dark ">
     <div v-if="authStore.user">
       <div class="container">
         <SearchBar />
@@ -26,28 +28,26 @@ onMounted(async () => {
     </div>
     <div v-else class="call_to_reg text-center">
       <h2 class="text-2xl pt-3 pb-2">Prima di continuare:</h2>
-      <router-link :to="{ name: 'Register' }" class="btn btn-dark">
-        Registrati
-      </router-link>
+      <div class="m-2">
+        <router-link :to="{ name: 'Login' }" class="btn btn-dark">
+          Accedi
+        </router-link>
+      </div>
+
+      oppure...
+
+      <div class="m-2">
+        <router-link :to="{ name: 'Register' }" class="btn btn-dark">
+          Registrati
+        </router-link>
+      </div>
     </div>
   </section>
 </template>
 <style scoped>
-nav {
-  z-index: 1000;
-  width: 100%;
-  position: fixed;
-  top: 0;
-}
-
 .overflow_card {
-  height: 60vh;
   overflow-y: auto;
 
-}
-
-::-webkit-scrollbar {
-  background: transparent;
 }
 
 .call_to_reg {

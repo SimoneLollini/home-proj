@@ -14,7 +14,7 @@ const form = ref({
   <Nav />
   <section>
     <div class="container pt-3">
-      <div class="text-white d-flex flex-column align-items-center">
+      <div class="text-dark d-flex flex-column align-items-center">
         <div class="wrapper w-25 text-center">
           <h1 class="mb-4">Login</h1>
           <form @submit.prevent="authStore.handleLogin(form)">
@@ -36,7 +36,7 @@ const form = ref({
               </button>
             </div>
           </form>
-          <router-link to="/register" class="text-decoration-none text-white">
+          <router-link to="/register" class="text-decoration-none text-dark">
             Se non hai ancora un account, registrati qui!
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-link-45deg"
               viewBox="0 0 16 16">

@@ -21,13 +21,11 @@ const email = ref("");
           w-full
           rounded-lg
           border border-gray-300
-          bg-gray-50
           p-2.5
           text-sm text-gray-900
           focus:border-blue-500 focus:ring-blue-500
           dark:border-gray-600
-          dark:bg-gray-700
-          dark:text-white
+          dark:text-dark
           dark:placeholder-gray-400
           dark:focus:border-blue-500
           dark:focus:ring-blue-500
@@ -46,7 +44,7 @@ const email = ref("");
         py-2.5
         text-center text-sm
         font-medium
-        text-white
+        text-dark
         hover:bg-blue-800
         focus:outline-none focus:ring-4 focus:ring-blue-300
         dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800

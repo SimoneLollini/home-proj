@@ -17,7 +17,7 @@ const form = ref({
   <section>
     <div class="container pt-3">
       <div>
-        <div class="text-center text-white d-flex justify-content-center">
+        <div class="text-center text-dark d-flex justify-content-center">
           <div class="wrapper w-25">
             <h1 class="mb-4">Registrazione</h1>
             <form @submit.prevent="authStore.handleRegister(form)">
@@ -51,7 +51,7 @@ const form = ref({
                 </button>
               </div>
             </form>
-            <router-link to="/login" class="text-decoration-none text-white">
+            <router-link to="/login" class="text-decoration-none text-dark">
               Se hai già un account, accedi qui!
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-link-45deg"
                 viewBox="0 0 16 16">

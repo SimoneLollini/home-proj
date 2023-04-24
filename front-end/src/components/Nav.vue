@@ -5,7 +5,7 @@ import SearchBar from "./SearchBar.vue";
 const authStore = useAuthStore();
 </script>
 <template>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-dark ">
+  <nav class="navbar position-sticky navbar-expand-lg bg-body-tertiary navbar-dark bg-dark ">
     <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

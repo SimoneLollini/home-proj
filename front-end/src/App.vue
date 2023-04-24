@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <main class="bg-dark bg-gradient vh-100">
+  <main>
     <RouterView />
   </main>
 </template>

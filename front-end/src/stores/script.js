@@ -14,16 +14,16 @@ export const store = reactive({
             .then(response => {
                 if (response.data.success) {
                     this.movies = response.data.results
-                    this.movie = null
+                    this.movie = ""
                 } else {
                     this.error = response.data.results
-                    this.movie = null
-                    this.movies = null
+                    this.movie = ""
+                    this.movies = ""
                 }
             })
             .catch(error => {
-                this.movie = null
-                this.movies = null
+                this.movie = ""
+                this.movies = ""
                 this.error = true
             })
     },
@@ -34,13 +34,16 @@ export const store = reactive({
                 if (response.data.success) {
                     this.movie = response.data.results
                     this.movies = null
+                    this.movieToSearchId = ""
                 } else {
                     this.error = response.data.results
+                    this.movie = ""
+                    this.movies = ""
                 }
             })
             .catch(error => {
-                this.movie = null
-                this.movies = null
+                this.movie = ""
+                this.movies = ""
                 this.error = true;
             })
     },
