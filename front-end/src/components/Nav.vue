@@ -28,6 +28,11 @@ const authStore = useAuthStore();
           </template>
           <template v-else>
             <li class="nav-item d-flex align-items-center">
+              <router-link :to="{ name: 'stored-movies' }" class="nav-link">
+                Ricerche salvate nel DB
+              </router-link>
+            </li>
+            <li class="nav-item d-flex align-items-center">
               <button @click="authStore.handleLogout" class="btn btn-dark">Logout</button>
             </li>
           </template>

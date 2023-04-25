@@ -6,7 +6,7 @@ import { store as store } from "../stores/script.js";
 <template>
     <section class="input_wrapper">
         <div class="mb-3">
-            <label class="d-block fs-5 fs-4" for="movieByTitle">Cerca film dal titolo</label>
+            <label class="d-block" for="movieByTitle">Cerca film dal titolo</label>
             <div class="wraper d-flex gap-1">
                 <input id="movieByTitle" class="form-control p-1" @keyup.enter="store.callApi(store.URL_MOVIE, false)"
                     type="text" placeholder="Cerca" v-model="store.moviesQuery">
@@ -14,7 +14,7 @@ import { store as store } from "../stores/script.js";
             </div>
         </div>
         <div class="mb-3">
-            <label class="d-block fs-5 fs-4" for="movieById">Cerca film dall'id</label>
+            <label class="d-block" for="movieById">Cerca film dall'id</label>
             <div class="wrapper d-flex gap-1">
                 <input id="movieById" class="form-control p-1" @keyup.enter="store.callApi(store.URL_MOVIE, true)"
                     type="text" placeholder="Cerca" v-model="store.movieToSearchId">

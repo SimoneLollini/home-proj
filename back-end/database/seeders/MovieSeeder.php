@@ -16,7 +16,7 @@ class MovieSeeder extends Seeder
     public function run()
     {
         DB::table('movies')->insert([
-            'imdbID' => 'tttsdvdk',
+            'imdbID' => 'tt0095765',
             'title' => 'titolo film 1',
             'year' => '2000',
             'rated' => 'PG',

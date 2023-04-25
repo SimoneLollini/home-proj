@@ -19,8 +19,11 @@ onMounted(async () => {
   <section class="text-dark ">
     <div v-if="authStore.user">
       <div class="container">
+        <h1 class="text-center p-4 bg-dark text-white m-4 rounded-3">
+          Qui puoi cercare tutti i film!
+        </h1>
         <SearchBar />
-        <div class="overflow_card row row-cols-5 justify-content-center">
+        <div class="row row-cols-5 justify-content-center">
           <MovieCard v-if="store.movies" :movie="movie" v-for="movie in store.movies" />
           <MovieCard v-if="store.movie" :movie="store.movie" />
         </div>
@@ -45,11 +48,6 @@ onMounted(async () => {
   </section>
 </template>
 <style scoped>
-.overflow_card {
-  overflow-y: auto;
-
-}
-
 .call_to_reg {
   padding-top: 56px;
 }

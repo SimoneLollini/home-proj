@@ -3,6 +3,7 @@ import axios from "axios";
 export const store = reactive({
     error: null,
     movies: null,
+    storedMovies: null,
     movie: null,
     loading: true,
     moviesQuery: '',
@@ -65,13 +66,29 @@ export const store = reactive({
             this.movies = null
             this.movie = null
         }
-    }, refactorTitle(title) {
+    },
+    refactorTitle(title) {
         let newTitle = title;
         if (title.length > 12) {
             newTitle = title.slice(0, 12);
             return newTitle.trim() + '...'
         }
         return title
+    },
+    getStoredMovies() {
+        const URL = this.URL_MOVIE + "/stored";
+        axios
+            .get(URL)
+            .then(response => {
+                if (response.data.success) {
+                    console.log(response);
+                    this.storedMovies = response.data.results
+                    console.log(this.storedMovies);
+                } else {
+                    error = response.data.results
+                    this.storedMovies = ""
+                }
+            })
     }
 },
 )
