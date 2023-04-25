@@ -13,10 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('actors', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->timestamps();
+        Schema::table('films', function (Blueprint $table) {
+            $table->unsignedBigInteger('director_id')->nullable()->after('imdbID');
+            $table->foreign('director_id')->references('id')->on('directors');
         });
     }
 
@@ -27,6 +26,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('actors');
+        Schema::table('films', function (Blueprint $table) {
+            $table->dropForeign(['director_id']);
+        });
     }
 };
