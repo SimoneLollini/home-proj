@@ -1,5 +1,14 @@
+1 Home Project 1.1 Step 1 
+Starting from the API available on the website: http://www.omdbapi.com/ 
+Realize a web application which, after an initial authentication, let the user to use the searching functionalities given by the API. 
+The Front End side has to send requests to the Back End side. The latter will perform the call to the OMDB API. 
+Bonus Point: use the Vue.js and Laravel Frameworks.
+API to use 
+• Search by Title: shows the list of the movies associated to such title;
+• Search by ID: shows the detail of the movie associated to such ID. 	
 1.2 Step 2 (optional) 
 With respect to the web application implemented in the previous step, store results of the Search by Title and Search by ID API in a Database organized as follows: 
-­Films
-­Actors
-Directors
+­ Films ­ Actors ­ Directors Bonus Point: use MongoDB 
+1.3 Step 3 (optional): 
+Make it possible for the web application to interact with a Back End able to simulate a “ping pong” chat using Web Sockets. 
+
