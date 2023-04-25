@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers\API\ContentController;
-use App\Http\Controllers\API\MovieController;
+use App\Http\Controllers\API\FilmController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -22,7 +21,7 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 
 
 Route::middleware('auth:sanctum')->group(function () {
-    Route::get('/movies/title/{movies:title}', [MovieController::class, 'index']);
-    Route::get('/movies/id/{movie:id}', [MovieController::class, 'show']);
-    Route::get('/movies/stored', [MovieController::class, 'indexStored']);
 });
+Route::get('/films/title/{films:title}', [FilmController::class, 'index']);
+Route::get('/films/id/{film:id}', [FilmController::class, 'show']);
+Route::get('/films/stored', [FilmController::class, 'indexStored']);

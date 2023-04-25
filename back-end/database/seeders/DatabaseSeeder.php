@@ -21,6 +21,6 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
         ]);
 
-        // \App\Models\Movie::factory()->create([]);
+        // \App\Models\Film::factory()->create([]);
     }
 }

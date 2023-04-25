@@ -1,0 +1,5 @@
+1.2 Step 2 (optional) 
+With respect to the web application implemented in the previous step, store results of the Search by Title and Search by ID API in a Database organized as follows: 
+­Films
+­Actors
+Directors

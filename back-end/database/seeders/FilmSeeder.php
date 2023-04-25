@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class MovieSeeder extends Seeder
+class FilmSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,7 +15,7 @@ class MovieSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('movies')->insert([
+        DB::table('films')->insert([
             'imdbID' => 'tt0095765',
             'title' => 'titolo film 1',
             'year' => '2000',
