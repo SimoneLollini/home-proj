@@ -56,7 +56,6 @@ class FilmController extends Controller
         $JSON_film = Http::get($url);
         $film = json_decode($JSON_film, true);
 
-
         if (!array_key_exists("Error", $film)) {
             return response()->json([
                 'success' => true,

@@ -53,7 +53,6 @@ export const store = reactive({
     * @param  {[String]} URL 
     * @param  {[boolean]} isId [isId = true -> search by id
     *                           isId = false -> search by title]
-    * 
     */
     callApi(URL, isId) {
         this.error = null;
@@ -91,14 +90,12 @@ export const store = reactive({
     },
     storeFilm() {
         store.loading = !store.loading;
-
         const URL = this.URL_FILM + "/store";
         const data = this.film;
         axios.post(URL, data).then((response) => {
             if (response.data.success) {
                 console.log("success");
                 store.loading = !store.loading;
-
             }
             else {
                 console.log(response)
@@ -106,7 +103,5 @@ export const store = reactive({
 
             }
         });
-
-
     }
 });
