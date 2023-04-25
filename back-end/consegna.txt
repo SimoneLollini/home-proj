@@ -9,6 +9,9 @@ API to use
 1.2 Step 2 (optional) 
 With respect to the web application implemented in the previous step, store results of the Search by Title and Search by ID API in a Database organized as follows: 
 ­ Films ­ Actors ­ Directors Bonus Point: use MongoDB 
+
+
+
 1.3 Step 3 (optional): 
 Make it possible for the web application to interact with a Back End able to simulate a “ping pong” chat using Web Sockets. 
 
