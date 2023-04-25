@@ -2,29 +2,29 @@ import { reactive } from "vue";
 import axios from "axios";
 export const store = reactive({
     error: null,
-    movies: null,
-    storedMovies: null,
-    movie: null,
+    films: null,
+    film: null,
+    storedFilms: null,
     loading: true,
-    moviesQuery: '',
-    movieToSearchId: '',
-    URL_MOVIE: 'http://localhost:8000/api/movies',
+    filmsQuery: '',
+    filmToSearchId: '',
+    URL_FILM: 'http://localhost:8000/api/films',
     callByTitle(URL) {
         axios
             .get(URL)
             .then(response => {
                 if (response.data.success) {
-                    this.movies = response.data.results
-                    this.movie = ""
+                    this.films = response.data.results
+                    this.film = ""
                 } else {
                     this.error = response.data.results
-                    this.movie = ""
-                    this.movies = ""
+                    this.film = ""
+                    this.films = ""
                 }
             })
             .catch(error => {
-                this.movie = ""
-                this.movies = ""
+                this.film = ""
+                this.films = ""
                 this.error = true
             })
     },
@@ -33,18 +33,18 @@ export const store = reactive({
             .get(URL)
             .then(response => {
                 if (response.data.success) {
-                    this.movie = response.data.results
-                    this.movies = null
-                    this.movieToSearchId = ""
+                    this.film = response.data.results
+                    this.films = null
+                    this.filmToSearchId = ""
                 } else {
                     this.error = response.data.results
-                    this.movie = ""
-                    this.movies = ""
+                    this.film = ""
+                    this.films = ""
                 }
             })
             .catch(error => {
-                this.movie = ""
-                this.movies = ""
+                this.film = ""
+                this.films = ""
                 this.error = true;
             })
     },
@@ -58,13 +58,13 @@ export const store = reactive({
     callApi(URL, isId) {
         this.error = null;
         if (!isId) {
-            this.callByTitle(URL += "/title/" + this.moviesQuery.toLocaleLowerCase())
+            this.callByTitle(URL += "/title/" + this.filmsQuery.toLocaleLowerCase())
         } else if (isId) {
-            this.callById(URL += "/id/" + this.movieToSearchId.toLocaleLowerCase())
+            this.callById(URL += "/id/" + this.filmToSearchId.toLocaleLowerCase())
         } else {
             this.error = "Inserire dei caratteri di ricerca!"
-            this.movies = null
-            this.movie = null
+            this.films = null
+            this.film = null
         }
     },
     refactorTitle(title) {
@@ -75,20 +75,38 @@ export const store = reactive({
         }
         return title
     },
-    getStoredMovies() {
-        const URL = this.URL_MOVIE + "/stored";
+    getStoredFilms() {
+        const URL = this.URL_FILM + "/stored";
         axios
             .get(URL)
             .then(response => {
                 if (response.data.success) {
-                    console.log(response);
-                    this.storedMovies = response.data.results
-                    console.log(this.storedMovies);
+                    this.storedFilms = response.data.results
+                    console.log(this.storedFilms);
                 } else {
                     error = response.data.results
-                    this.storedMovies = ""
+                    this.storedFilms = ""
                 }
             })
+    },
+    storeFilm() {
+        store.loading = !store.loading;
+
+        const URL = this.URL_FILM + "/store";
+        const data = this.film;
+        axios.post(URL, data).then((response) => {
+            if (response.data.success) {
+                console.log("success");
+                store.loading = !store.loading;
+
+            }
+            else {
+                console.log(response)
+                store.loading = !store.loading;
+
+            }
+        });
+
+
     }
-},
-)
+});

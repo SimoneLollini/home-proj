@@ -4,13 +4,12 @@ import { useAuthStore } from "../stores/auth";
 import { store } from "../stores/script.js";
 import Nav from "./Nav.vue";
 import SearchBar from "./SearchBar.vue";
-import MovieCard from "./MovieCard.vue"
+import FilmCard from "./FilmCard.vue"
 
 const authStore = useAuthStore();
-
 onMounted(async () => {
-  store.movie = "";
-  store.movies = "";
+  store.film = "";
+  store.films = "";
   await authStore.getUser();
 });
 </script>
@@ -24,8 +23,8 @@ onMounted(async () => {
         </h1>
         <SearchBar />
         <div class="row row-cols-5 justify-content-center">
-          <MovieCard v-if="store.movies" :movie="movie" v-for="movie in store.movies" />
-          <MovieCard v-if="store.movie" :movie="store.movie" />
+          <FilmCard v-if="store.films" :film="film" v-for="film in store.films" />
+          <FilmCard v-if="store.film" :film="store.film" />
         </div>
       </div>
     </div>

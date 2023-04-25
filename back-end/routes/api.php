@@ -25,4 +25,4 @@ Route::middleware('auth:sanctum')->group(function () {
 Route::get('/films/title/{films:title}', [FilmController::class, 'index']);
 Route::get('/films/id/{film:id}', [FilmController::class, 'show']);
 Route::get('/films/stored', [FilmController::class, 'indexStored']);
-Route::post('/films', [FilmController::class, 'store']);
+Route::post('/films/store', [FilmController::class, 'store']);

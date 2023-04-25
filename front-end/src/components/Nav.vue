@@ -28,7 +28,7 @@ const authStore = useAuthStore();
           </template>
           <template v-else>
             <li class="nav-item d-flex align-items-center">
-              <router-link :to="{ name: 'stored-movies' }" class="nav-link">
+              <router-link :to="{ name: 'stored-films' }" class="nav-link">
                 Ricerche salvate nel DB
               </router-link>
             </li>

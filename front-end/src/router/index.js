@@ -25,14 +25,14 @@ const routes = [
     component: () => import("../components/ResetPassword.vue"),
   },
   {
-    path: '/movies/:id',
-    name: 'movie-details',
-    component: () => import("../views/MovieDetails.vue")
+    path: '/films/:id',
+    name: 'film-details',
+    component: () => import("../views/FilmDetails.vue")
   },
   {
-    path: '/movies/stored',
-    name: 'stored-movies',
-    component: () => import("../views/StoredMovies.vue")
+    path: '/films/stored',
+    name: 'stored-films',
+    component: () => import("../views/StoredFilms.vue")
   }
 ];
 

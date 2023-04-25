@@ -70,29 +70,6 @@ class FilmController extends Controller
         }
     }
 
-
-
-
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  array $data
-     * @Return void()
-     */
-    // public function store(array $film)
-    // {
-    //     $film_imdbID = Film::where('imdbID', $film['imdbID'])->first();
-    //     if ($film_imdbID === null) {
-    //         $newFilm = new Film;
-    //         $newFilm->imdbID = $film['imdbID'];
-    //         $newFilm->Title = $film['Title'];
-    //         $newFilm->Year = $film['Year'];
-    //         $newFilm->Poster = $film['Poster'];
-    //         $newFilm->Type = $film['Type'];
-    //         $newFilm->save();
-    //     }
-    // }
     public function store(HttpRequest $request)
     {
         $film = $request->all();
@@ -108,7 +85,7 @@ class FilmController extends Controller
                 $newFilm->director_id = $newDirector['id'];
             }
             $newFilm->save();
-            //$restaurant->types()->attach($request->types);
+
             if (!is_null($film['Actors'])) {
                 $actors = explode(",", $film['Actors']);
                 foreach ($actors as $actor) {
@@ -120,31 +97,4 @@ class FilmController extends Controller
             }
         }
     }
-    /*   public function store(Request $request)
-    {
-        $data = $request->all();
-
-        $validator = Validator::make($data, [
-            'email' => 'required|email',
-        ]);
-
-        if ($validator->fails()) {
-            return response()->json([
-                'success' => false,
-                'errors' => $validator->errors()
-            ]);
-        }
-
-        $newOrder = new Order();
-        $newOrder->fill($data);
-        $newOrder->save();
-
-        foreach ($plateArray as $plate) {
-            $newOrder->plates()->attach($plate['id'], array('quantity' => $plate['quantity']));
-        }
-
-        return response()->json([
-            'success' => true
-        ]);
-    } */
 }

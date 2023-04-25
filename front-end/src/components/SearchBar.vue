@@ -6,19 +6,19 @@ import { store as store } from "../stores/script.js";
 <template>
     <section class="input_wrapper">
         <div class="mb-3">
-            <label class="d-block" for="movieByTitle">Cerca film dal titolo</label>
+            <label class="d-block" for="filmByTitle">Cerca film dal titolo</label>
             <div class="wraper d-flex gap-1">
-                <input id="movieByTitle" class="form-control p-1" @keyup.enter="store.callApi(store.URL_MOVIE, false)"
-                    type="text" placeholder="Cerca" v-model="store.moviesQuery">
-                <button class="btn btn-dark p-1" @click="store.callApi(store.URL_MOVIE, false)">Cerca</button>
+                <input id="filmByTitle" class="form-control p-1" @keyup.enter="store.callApi(store.URL_FILM, false)"
+                    type="text" placeholder="Cerca" v-model="store.filmsQuery">
+                <button class="btn btn-dark p-1" @click="store.callApi(store.URL_FILM, false)">Cerca</button>
             </div>
         </div>
         <div class="mb-3">
-            <label class="d-block" for="movieById">Cerca film dall'id</label>
+            <label class="d-block" for="filmById">Cerca film dall'id</label>
             <div class="wrapper d-flex gap-1">
-                <input id="movieById" class="form-control p-1" @keyup.enter="store.callApi(store.URL_MOVIE, true)"
-                    type="text" placeholder="Cerca" v-model="store.movieToSearchId">
-                <button class="btn btn-dark p-1" @click="store.callApi(store.URL_MOVIE, true)">Cerca</button>
+                <input id="filmById" class="form-control p-1" @keyup.enter="store.callApi(store.URL_FILM, true)" type="text"
+                    placeholder="Cerca" v-model="store.filmToSearchId">
+                <button class="btn btn-dark p-1" @click="store.callApi(store.URL_FILM, true)">Cerca</button>
             </div>
         </div>
         <div class="position-relative" v-if="store.error">
