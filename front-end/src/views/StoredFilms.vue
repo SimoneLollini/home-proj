@@ -17,7 +17,7 @@ onMounted(async () => {
 </script>
 <template>
     <Nav />
-    <div class="container">
+    <div class="container" v-if="authStore.user">
         <h1 class="text-center p-4 bg-dark text-white m-4 rounded-3">
             Una lista di tutti i risultati che sono stati salvati!
         </h1>
